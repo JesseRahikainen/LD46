@@ -1,0 +1,199 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sl240\slmult1\lang9\f0\fs22 Keep it alive:\par
+\par
+2. Post-apocalyptic game where you have to build a small settlement. Go out and gather materials to build up your camp. Deal with events that happen during expeditions. Find new people to send out. A prequel to the ancient technology game?\par
+Recruits that have various stats and equipment, they have a chance of facing challenges which they can fail, succeed, or succeed at a cost with. Stats 0 to +3, roll 1d6 + stat, if > 4 total success, if > 2 success at a cost, otherwise failure. Every season you can send people out to explore. They run into events and resolve them based on their stats. There are also settlement events you have to deal with. End goal is to grow your settlement enough.\par
+Food, shelter, and safety are the primary concerns.\par
+People also act in other ways, you need someone to provide food, you need someone to help create and maintain shelters, and you need protection from various threats.\par
+\par
+7. Puzzle game. Pieces coming down from the top. You can suck them in, shoot them out, and consume them. Making a group of three or more creates a match and gives you Potential. There's a meter off to the side counting down. When it reaches zero you have to have enough Potential otherwise you lose. If the pieces reach the bottom you lose. Consuming a piece reduces the amount of time left.\par
+You're playing as a heart, and you have to beat. If you don't beat the person you're in dies. Score is based on how many times you beat.\par
+\par
+10. You're driving an old mech. Along the way you have to find pieces to repair it and keep it alive. Use overdrive mechanic. Can find replacement equipment along the way.\par
+Leg, arms, torso, sensors, and miscellaneous slots. Each has a certain amount of integrity. If they have no integrity they act at 3/4 strength. If they do have integrity you can overdrive them to get a bonus, but at a chance of damaging them. Enemy attacks can also damage them. Can replace them with stuff you find along the way. That could be the leveling up/tutorialization, you start out with a mech that is has no pieces with integrity and you find pieces to build it back up. By the end of the game you have everything working.\par
+You have survived a massive battle and need to get back to base. But you're also trapped in enemy territory. You have to fight off enemy mechs, along with horrible genetically altered beasts to get back home. Have three different pieces for each slot, damaged and undamaged. 15 pieces total. 30 pieces of art needed.\par
+Chests are damaged mechs, mech enemies can also drop equipment. Biological enemies just act as threats. There are very few mechs around.\par
+Arms - Rifle (+aim), Chain Guns (extra attack), Rocket Launchers (+damage)\par
+Legs - Biped (+dodge), Tank Treads (+armor), Spider (+hit)\par
+Torsos - Heavy (+armor), Medium (+damage), Light (+dodge)\par
+Sensors - Yes or no (+aim)\par
+Misc - Missile Pod (+heavy attack), Smoke (+auto run), Jump Jets (auto dodge next 2 attacks)\par
+All bonuses last three rounds after use.\par
+Misc equipment only does something when it's overdriven. Otherwise it provides no benefit.\par
+\par
+Make it an arena based rogue-like thing, like Halls of Ozmot. Have a small arena with various obstacles and you have to defeat all enemies. As you progress enemies become stronger. After each round you can choose what pieces of your mech to repair. Still use the overdrive system but don't have custom pieces. Cuts down on art greatly. Use a hex map. In a cave, that way we only have to do one z-level. Not in a cave, in a large forest, and you're smaller then the trees. Mechs are about 10 feet tall instead of titans. More like an oversized body suit.\par
+Parts:\par
+Left arm - Ranged weapon. Misses more than melee.\par
+  Overdrive: Increased accuracy and damage attack.\par
+  Damaged: Can't shoot at all.\par
+\par
+Right arm - Melee weapon. Almost always hits and decent damage.\par
+  Overdrive: AOE attack.\par
+  Damaged: Decreased chance to hit and damage.\par
+\par
+Torso - Main base of the body.\par
+  Overdrive: Shield that protects from attacks for 3 rounds.\par
+  Damaged: Increased damage to all other parts.\par
+\par
+Legs - Mobility\par
+  Overdrive: Able to make two moves directly after this.\par
+  Damaged: Increased chance of being hit.\par
+\par
+Sensors - \par
+  Overdrive: Increased chance to hit for the next 3 rounds.\par
+  Damaged: Cut chance to hit in half. Can't activate look command.\par
+\par
+Others?\par
+Battery - \par
+Smoke Screen - \par
+Grenades - \par
+\par
+\par
+Map Assets\par
+Ground\par
+Tree Trunk\par
+Small Tree (Destructible)\par
+Very Large Tree\par
+Water (Can see over but can't move over)\par
+Smoke\par
+\par
+Entire map on a single screen. Everything visible from the start. But block LOS with trees.\par
+\par
+Hex or square grid? Lets go with square since it fits into the screen easier.\par
+\par
+You die when all your pieces reach 0 health.\par
+\par
+Map generation. Divide the level into a 3x3 grid. There's a 50% chance there's a lake. The other grid spots are filled with 1-2 large trees, and 2-5 small trees. Enemies are then chosen and randomly distributed around the map except in the center of the grid. The center is where the player spawns.\par
+\par
+Enemies:\par
+Basic Melee - Does a small amount of melee damage.\par
+Strong Melee - Does a large amount of melee damage.\par
+Armored Melee - Lots of armor, weak to overdriven ranged shot.\par
+Ranged - Spits every few rounds.\par
+Explosive - Explodes when it dies, damaging everything around it.\par
+Shrieker - Stationary, lets out an alert a few rounds after seeing the player. Draws in nearest N enemies.\par
+\par
+Enemies have very little armor.\par
+\par
+For the resolution roll N 6 sided dice, every \par
+\par
+\par
+Player Input States:\par
+  Normal\par
+    Move/Attack directions (qweasd)\par
+    Overdrive a part (o)\par
+    Aim shot (i)\par
+    Look (l)\par
+    Skip turn (.)\par
+    Help (h)\par
+  Overdrive selection\par
+    Piece to choose (1234567890)\par
+    Cancel (.)\par
+  Look\par
+    Move reticle (qweasd)\par
+    Goto Normal (.)\par
+  Aiming Shot\par
+    Move reticle (qweasd)\par
+    Attack (k)\par
+    Cancel (.)\par
+    \par
+Enemy States:\par
+  Idle\par
+  Curious\par
+  Engaged\par
+Use A* to navigate map.\par
+\par
+\par
+Use hex grid.\par
+\par
+\par
+Player damage:\par
+when they're hit a random part with health > 0 will be chosen, and it will be damaged.\par
+\par
+Player starts with 5 * 8 + 4, 44 health.\par
+Average damage will be 1/2 pool.\par
+\par
+Make enemies high damage but very squishy, make player lower damage but very resilant.\par
+\par
+So if the player has:\par
+hit = 8\par
+dmg = 8\par
+dodge = 8\par
+armor = 4\par
+\par
+then the enemy should have\par
+hit = 12\par
+dmg = 8\par
+dodge = 6\par
+armor = 4\par
+\par
+which means about 75% of our shots should hit, and 75% of theirs should hit as well\par
+\par
+too much\par
+\par
+\par
+weak\par
+hit = 12\par
+dmg = 8\par
+dodge = 6\par
+armor = 1\par
+hp = 8\par
+cost = 1\par
+Phot\par
+Large reptile. Weak but show up in groups.\par
+\par
+strong\par
+hit = 12\par
+dmg = 12\par
+dodge = 6\par
+armor = 1\par
+hp = 8\par
+cost = 2\par
+Othokep\par
+Very large mammal. Strong and dangerous.\par
+\par
+armored\par
+hit = 10\par
+dmg = 8\par
+dodge = 6\par
+armor = 10\par
+hp = 8\par
+cost = 2\par
+special: can shield up, after that's done it does a very powerful attack, dmg = 12\par
+Dhos\par
+Shelled creature. Hard to kill. Hits hard.\par
+\par
+ranged\par
+hit = 12\par
+dmg = 6\par
+dodge = 6\par
+armor = 1\par
+hp = 8\par
+cost = 4\par
+special: attacks every other round, shooting at the player\par
+Pho-lar\par
+Stays away and attacks from range.\par
+\par
+explosive\par
+hit = 12\par
+dmg = 8\par
+dodge = 6\par
+armor = 2\par
+hp = 12\par
+cost = 4\par
+special: when it dies it explodes, auto hit, dmg = 12\par
+Bbor\par
+Explodes upon death.\par
+\par
+shrieker\par
+hit = 0\par
+dmg = 0\par
+dodge = 0\par
+armor = 10\par
+hp = 4\par
+cost = 2\par
+special: when it sees the player it will occasionally shriek, drawing in other enemies, doesn't attack\par
+Keki\par
+Plant creature. No attacks, but it's shrieks draw in other creatures.\par
+}
+ 

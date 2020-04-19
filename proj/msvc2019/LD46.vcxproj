@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{52003A75-2AD7-44C0-B8FC-08605C0E25E5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>_FrameworkProgress</RootNamespace>
+    <ProjectName>LD 46</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)-dbg</TargetName>
+    <OutDir>$(SolutionDir)\..\..\bin\win32\</OutDir>
+    <IncludePath>F:\Data\Libraries\stb-master;F:\Data\Libraries\SDL2-2.0.9_src\include;F:\Data\Libraries\spine-runtimes-master\spine-c\include;F:\Data\Libraries\nuklear-master;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\Data\Libraries\spine-runtimes-master\spine-c\lib;F:\Data\Libraries\SDL2-2.0.9_src\VisualC\Win32\Debug;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\..\..\bin\win32\</OutDir>
+    <IncludePath>F:\Data\Libraries\stb-master;F:\Data\Libraries\SDL2-2.0.9_src\include;F:\Data\Libraries\spine-runtimes-master\spine-c\include;F:\Data\Libraries\nuklear-master;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\Data\Libraries\spine-runtimes-master\spine-c\lib;F:\Data\Libraries\SDL2-2.0.9_src\VisualC\Win32\Release;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;GLEW_STATIC;THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <DisableSpecificWarnings>4100;4189;4201;4996;4127;4756;6385;6386;26451;6255;6385;26451;4456;4457</DisableSpecificWarnings>
+      <PreprocessToFile>false</PreprocessToFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>spine-c-dbg.lib;SDL2.lib;SDL2main.lib;opengl32.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;GLEW_STATIC;_LIB;THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <DisableSpecificWarnings>4100;4189;4201;4996;4127;4756;6385;6386;26451;6255;6385;26451;4456;4457</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>spine-c.lib;SDL2.lib;SDL2main.lib;opengl32.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\Game\collisionDetection.h" />
+    <ClInclude Include="..\..\src\Game\Components\generalComponents.h" />
+    <ClInclude Include="..\..\src\Game\gameState.h" />
+    <ClInclude Include="..\..\src\Game\Game\arenaScreen.h" />
+    <ClInclude Include="..\..\src\Game\Game\values.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\camera.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\color.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\debugRendering.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\geomTrail.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\gfxUtil.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\glDebugging.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\glPlatform.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\graphics.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\images.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\scissor.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\shaderManager.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\spineGfx.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\sprites.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\imageSheets.h" />
+    <ClInclude Include="..\..\src\Game\Graphics\triRendering.h" />
+    <ClInclude Include="..\..\src\Game\IMGUI\nuklearHeader.h" />
+    <ClInclude Include="..\..\src\Game\IMGUI\nuklearWrapper.h" />
+    <ClInclude Include="..\..\src\Game\Input\input.h" />
+    <ClInclude Include="..\..\src\Game\Math\fixedPoint.h" />
+    <ClInclude Include="..\..\src\Game\Math\mathUtil.h" />
+    <ClInclude Include="..\..\src\Game\Math\matrix3.h" />
+    <ClInclude Include="..\..\src\Game\Math\matrix4.h" />
+    <ClInclude Include="..\..\src\Game\Math\vector2.h" />
+    <ClInclude Include="..\..\src\Game\Math\vector3.h" />
+    <ClInclude Include="..\..\src\Game\music.h" />
+    <ClInclude Include="..\..\src\Game\Others\gl_core.h" />
+    <ClInclude Include="..\..\src\Game\particles.h" />
+    <ClInclude Include="..\..\src\Game\Processes\generalProcesses.h" />
+    <ClInclude Include="..\..\src\Game\sound.h" />
+    <ClInclude Include="..\..\src\Game\System\ECPS\ecps_componentBitFlags.h" />
+    <ClInclude Include="..\..\src\Game\System\ECPS\ecps_componentTypes.h" />
+    <ClInclude Include="..\..\src\Game\System\ECPS\ecps_dataTypes.h" />
+    <ClInclude Include="..\..\src\Game\System\ECPS\ecps_values.h" />
+    <ClInclude Include="..\..\src\Game\System\ECPS\entityComponentProcessSystem.h" />
+    <ClInclude Include="..\..\src\Game\System\gameTime.h" />
+    <ClInclude Include="..\..\src\Game\System\jobQueue.h" />
+    <ClInclude Include="..\..\src\Game\System\jobRingQueue.h" />
+    <ClInclude Include="..\..\src\Game\System\memory.h" />
+    <ClInclude Include="..\..\src\Game\System\platformLog.h" />
+    <ClInclude Include="..\..\src\Game\System\random.h" />
+    <ClInclude Include="..\..\src\Game\System\systems.h" />
+    <ClInclude Include="..\..\src\Game\tween.h" />
+    <ClInclude Include="..\..\src\Game\UI\button.h" />
+    <ClInclude Include="..\..\src\Game\UI\checkBox.h" />
+    <ClInclude Include="..\..\src\Game\UI\text.h" />
+    <ClInclude Include="..\..\src\Game\Utils\aStar.h" />
+    <ClInclude Include="..\..\src\Game\Utils\cfgFile.h" />
+    <ClInclude Include="..\..\src\Game\Utils\hashMap.h" />
+    <ClInclude Include="..\..\src\Game\Utils\helpers.h" />
+    <ClInclude Include="..\..\src\Game\Utils\hexGrid.h" />
+    <ClInclude Include="..\..\src\Game\Utils\idSet.h" />
+    <ClInclude Include="..\..\src\Game\Utils\stretchyBuffer.h" />
+    <ClInclude Include="..\..\src\Game\world.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Game\collisionDetection.c" />
+    <ClCompile Include="..\..\src\Game\Components\generalComponents.c" />
+    <ClCompile Include="..\..\src\Game\gameState.c" />
+    <ClCompile Include="..\..\src\Game\Game\arenaScreen.c" />
+    <ClCompile Include="..\..\src\Game\Game\values.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\camera.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\color.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\debugRendering.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\geomTrail.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\gfxUtil.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\glDebugging.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\glPlatform.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\graphics.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\images.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\scissor.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\shaderManager.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\spineGfx.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\sprites.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\imageSheets.c" />
+    <ClCompile Include="..\..\src\Game\Graphics\triRendering.c" />
+    <ClCompile Include="..\..\src\Game\IMGUI\nuklearWrapper.c" />
+    <ClCompile Include="..\..\src\Game\Input\input.c" />
+    <ClCompile Include="..\..\src\Game\main.c" />
+    <ClCompile Include="..\..\src\Game\Math\fixedPoint.c" />
+    <ClCompile Include="..\..\src\Game\Math\mathUtil.c" />
+    <ClCompile Include="..\..\src\Game\Math\matrix3.c" />
+    <ClCompile Include="..\..\src\Game\Math\matrix4.c" />
+    <ClCompile Include="..\..\src\Game\Math\vector2.c" />
+    <ClCompile Include="..\..\src\Game\Math\vector3.c" />
+    <ClCompile Include="..\..\src\Game\Others\gl_core.c" />
+    <ClCompile Include="..\..\src\Game\Others\stb_vorbis_sdl.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Game\particles.c" />
+    <ClCompile Include="..\..\src\Game\Processes\generalProcesses.c" />
+    <ClCompile Include="..\..\src\Game\sound.c" />
+    <ClCompile Include="..\..\src\Game\System\ECPS\ecps_componentBitFlags.c" />
+    <ClCompile Include="..\..\src\Game\System\ECPS\ecps_componentTypes.c" />
+    <ClCompile Include="..\..\src\Game\System\ECPS\entityComponentProcessSystem.c" />
+    <ClCompile Include="..\..\src\Game\System\gameTime.c" />
+    <ClCompile Include="..\..\src\Game\System\jobQueue.c" />
+    <ClCompile Include="..\..\src\Game\System\jobRingQueue.c" />
+    <ClCompile Include="..\..\src\Game\System\memory.c" />
+    <ClCompile Include="..\..\src\Game\System\platformLog.c" />
+    <ClCompile Include="..\..\src\Game\System\random.c" />
+    <ClCompile Include="..\..\src\Game\System\systems.c" />
+    <ClCompile Include="..\..\src\Game\tween.c" />
+    <ClCompile Include="..\..\src\Game\UI\button.c" />
+    <ClCompile Include="..\..\src\Game\UI\checkBox.c" />
+    <ClCompile Include="..\..\src\Game\UI\text.c" />
+    <ClCompile Include="..\..\src\Game\Utils\aStar.c" />
+    <ClCompile Include="..\..\src\Game\Utils\cfgFile.c" />
+    <ClCompile Include="..\..\src\Game\Utils\hashMap.c" />
+    <ClCompile Include="..\..\src\Game\Utils\helpers.c" />
+    <ClCompile Include="..\..\src\Game\Utils\hexGrid.c" />
+    <ClCompile Include="..\..\src\Game\Utils\idSet.c" />
+    <ClCompile Include="..\..\src\Game\world.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\readme.txt" />
+    <Text Include="..\..\screen_template.txt" />
+    <Text Include="..\..\state_template.txt" />
+    <Text Include="..\..\todo.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

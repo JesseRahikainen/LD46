@@ -1,0 +1,25 @@
+Create a list of steps needed to start a project from fresh
+
+Frame based animations - copy existing stuff, allow offsets per frame (maybe just use Spine for this?)
+Come up with some way to configure and store OpenGL states, so we can make sure everything is in order when starting to render specific things
+Child states, hfsm
+Optional switch for having a locked graphics update rate (must always be >= gameplay fps), would be easier if it was a multiple of the gameplay fps
+Render to image
+Full support for UTF-8 strings.
+
+eventually:
+Find a better way to enumerate all the combinations of stuff that can go into a render instruction.
+See what OpenGL features are actually needed and downgrade the version to support that
+Add in ability to cope with the amount of texture memory the computer has (basically make sure the next image can fit, if it can't then exit with a log), maybe store the max we're going to use and test it when the program starts so they don't get a crash in the middle of playing. Just pre-allocate how much we'll think we need and then use it up as we get more, can be mixed in with the atlasing.
+Turn off multi-threaded dll library (may need to rebuild all the SDL2 based libraries)  http://forums.libsdl.org/viewtopic.php?t=9634&sid=917224a793e6a71f05b1c7ed49120797
+Better file loading scheme, avoid locks, some sort of queue system so we can say what we want loaded and use some placeholder asset until it's fully loaded
+
+continuous:
+- Generally try to get rid of external libraries, except for SDL2, use STB whenever possible
+- Go through all the log messages and enforce some sort of standards: stuff we want in debug builds versus stuff we want release builds.
+Will want three levels: Release, Development, and Debug.
+Map these to SDL_LOG_PRIORITY_INFO, SDL_LOG_PRIORITY_DEBUG, and SDL_LOG_PRIORITY_VERBOSE.
+Use SDL_LOG_PRIORITY_INFO for any messages we want sent out no matter what.
+Use SDL_LOG_PRIORITY_DEBUG for more detailed data for info level logs and extra to help trace what's happening.
+Use SDL_LOG_PRIORITY_VERBOSE for log spam and other such things that might effect performance.
+Have this configurable, so we can switch it on the fly.
